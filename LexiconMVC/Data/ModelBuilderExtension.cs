@@ -11,18 +11,46 @@ namespace LexiconMVCData.Data
     {
         public static void Seed(this ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Person>().HasData(new Person { Id = 1, Name = "Adam Adamsson", PhoneNumber = "031-123456", City = "Göteborg" });
-            modelBuilder.Entity<Person>().HasData(new Person { Id = 2, Name = "Bertil Bertilsson", PhoneNumber = "031-123456", City = "Malmö" });
-            modelBuilder.Entity<Person>().HasData(new Person { Id = 3, Name = "Carl Carlsson", PhoneNumber = "031-123456", City = "Stockholm" });
-            modelBuilder.Entity<Person>().HasData(new Person { Id = 4, Name = "Dan Danielsson", PhoneNumber = "031-123456", City = "Göteborg" });
-            modelBuilder.Entity<Person>().HasData(new Person { Id = 5, Name = "Erik Eriksson", PhoneNumber = "031-123456", City = "Malmö" });
-            modelBuilder.Entity<Person>().HasData(new Person { Id = 6, Name = "Frans Fransson", PhoneNumber = "031-123456", City = "Stockholm" });
-            modelBuilder.Entity<Person>().HasData(new Person { Id = 7, Name = "Gustav Gustavsson", PhoneNumber = "031-123456", City = "Göteborg" });
-            modelBuilder.Entity<Person>().HasData(new Person { Id = 8, Name = "Henrik Henriksson", PhoneNumber = "031-123456", City = "Malmö" });
-            modelBuilder.Entity<Person>().HasData(new Person { Id = 9, Name = "Ivar Ivarsson", PhoneNumber = "031-123456", City = "Stockholm" });
-            modelBuilder.Entity<Person>().HasData(new Person { Id = 10, Name = "Jan Jansson", PhoneNumber = "031-123456", City = "Göteborg" });
-            modelBuilder.Entity<Person>().HasData(new Person { Id = 11, Name = "Karl Karlsson", PhoneNumber = "031-123456", City = "Malmö" });
-            modelBuilder.Entity<Person>().HasData(new Person { Id = 12, Name = "Lars Larsson", PhoneNumber = "031-123456", City = "Stockholm" });
+            modelBuilder.Entity<Country>().HasData(new Country { Id = 1, Name = "Sverige"});
+            modelBuilder.Entity<Country>().HasData(new Country { Id = 2, Name = "Norge" });
+            modelBuilder.Entity<Country>().HasData(new Country { Id = 3, Name = "Danmark" });
+
+            modelBuilder.Entity<City>().HasData(new City { Id = 1, Name = "Göteborg", CountryId = 1});
+            modelBuilder.Entity<City>().HasData(new City { Id = 2, Name = "Malmö", CountryId = 1 });
+            modelBuilder.Entity<City>().HasData(new City { Id = 3, Name = "Stockholm", CountryId = 1 });
+            modelBuilder.Entity<City>().HasData(new City { Id = 4, Name = "Oslo", CountryId = 2 });
+            modelBuilder.Entity<City>().HasData(new City { Id = 5, Name = "Bergen", CountryId = 2 });
+            modelBuilder.Entity<City>().HasData(new City { Id = 6, Name = "Trondheim", CountryId = 2 });
+            modelBuilder.Entity<City>().HasData(new City { Id = 7, Name = "Köpenhamn", CountryId = 3 });
+            modelBuilder.Entity<City>().HasData(new City { Id = 8, Name = "Ålborg", CountryId = 3 });
+            modelBuilder.Entity<City>().HasData(new City { Id = 9, Name = "Helsingör", CountryId = 3 });
+
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 1, Name = "Adam Adamsson", PhoneNumber = "031-123456", CityId = 1 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 2, Name = "Bertil Bertilsson", PhoneNumber = "031-123456", CityId = 2 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 3, Name = "Carl Carlsson", PhoneNumber = "031-123456", CityId = 3 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 4, Name = "Dan Danielsson", PhoneNumber = "031-123456", CityId = 1 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 5, Name = "Erik Eriksson", PhoneNumber = "031-123456", CityId = 2 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 6, Name = "Frans Fransson", PhoneNumber = "031-123456", CityId = 3 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 7, Name = "Gustav Gustavsson", PhoneNumber = "031-123456", CityId = 1 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 8, Name = "Henrik Henriksson", PhoneNumber = "031-123456", CityId = 2 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 9, Name = "Ivar Ivarsson", PhoneNumber = "031-123456", CityId = 3 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 10, Name = "Jan Jansson", PhoneNumber = "031-123456", CityId = 1 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 11, Name = "Karl Karlsson", PhoneNumber = "031-123456", CityId = 2 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 12, Name = "Lars Larsson", PhoneNumber = "031-123456", CityId = 3 });
+
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 13, Name = "Ole Bramserud", PhoneNumber = "031-123456", CityId = 4 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 14, Name = "Petter Northug", PhoneNumber = "031-123456", CityId = 5 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 15, Name = "Theres Johaug", PhoneNumber = "031-123456", CityId = 6 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 16, Name = "Gunn-Rita Dahle Flesjå", PhoneNumber = "031-123456", CityId = 4 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 17, Name = "Fleksnes", PhoneNumber = "031-123456", CityId = 5 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 18, Name = "Max manus", PhoneNumber = "031-123456", CityId = 6 });
+
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 19, Name = "Nikolaj Coster-Waldau", PhoneNumber = "031-123456", CityId = 7 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 20, Name = "Iben Hjejle", PhoneNumber = "031-123456", CityId = 8 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 21, Name = "Mads Mikkelsen", PhoneNumber = "031-123456", CityId = 9 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 22, Name = "Kristian Tyrann", PhoneNumber = "031-123456", CityId = 7 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 23, Name = "Kim Larsen", PhoneNumber = "031-123456", CityId = 8 });
+            modelBuilder.Entity<Person>().HasData(new Person { Id = 24, Name = "Tycho Brahe", PhoneNumber = "031-123456", CityId = 9 });
 
         }
 

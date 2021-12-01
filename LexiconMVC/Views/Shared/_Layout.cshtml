@@ -11,14 +11,16 @@
 <body>
     <header>
         <img src="/images/pagelogo.png" alt="page logo" width="200" height="100" asp-append-version="true">
-        <nav>
-            <ul class="nav navbar-nav">
-                <li><a asp-controller="Home" asp-action="Index">Index</a></li>
-                <li><a asp-controller="Home" asp-action="About">About</a></li>
-                <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-                <li><a asp-controller="Home" asp-action="Projects">Projects</a></li>
-                <li><a asp-controller="People" asp-action="Index">People</a></li>
-                <li><a asp-controller="Ajax" asp-action="Index">Ajax</a></li>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <ul class="navbar-nav mr-auto">
+                <li><a class="nav-link" asp-controller="Home" asp-action="Index">Index</a></li>
+                <li><a class="nav-link" asp-controller="Home" asp-action="About">About</a></li>
+                <li><a class="nav-link" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <li><a class="nav-link" asp-controller="Home" asp-action="Projects">Projects</a></li>
+                <li><a class="nav-link" asp-controller="People" asp-action="Index">People</a></li>
+                <li><a class="nav-link" asp-controller="Ajax" asp-action="Index">Ajax</a></li>
+                <li><a class="nav-link" asp-controller="Countries" asp-action="Index">Countries</a></li>
+                <li><a class="nav-link" asp-controller="Cities" asp-action="Index">Cities</a></li>
             </ul>
         </nav>
     </header>
