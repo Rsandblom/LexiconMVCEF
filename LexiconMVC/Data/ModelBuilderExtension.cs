@@ -52,6 +52,45 @@ namespace LexiconMVCData.Data
             modelBuilder.Entity<Person>().HasData(new Person { Id = 23, Name = "Kim Larsen", PhoneNumber = "031-123456", CityId = 8 });
             modelBuilder.Entity<Person>().HasData(new Person { Id = 24, Name = "Tycho Brahe", PhoneNumber = "031-123456", CityId = 9 });
 
+            modelBuilder.Entity<Language>().HasData(new Language { Id = 1, Name = "Svenska"});
+            modelBuilder.Entity<Language>().HasData(new Language { Id = 2, Name = "Norska" });
+            modelBuilder.Entity<Language>().HasData(new Language { Id = 3, Name = "Danska" });
+
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 1, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 1, LanguageId = 2 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 2, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 3, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 3, LanguageId = 3 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 4, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 5, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 6, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 7, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 7, LanguageId = 2 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 8, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 9, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 10, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 10, LanguageId = 3 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 11, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 12, LanguageId = 1 });
+
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 13, LanguageId = 2 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 14, LanguageId = 2 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 14, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 15, LanguageId = 2 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 16, LanguageId = 2 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 17, LanguageId = 2 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 17, LanguageId = 3 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 18, LanguageId = 2 });
+
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 19, LanguageId = 3 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 20, LanguageId = 3 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 21, LanguageId = 3 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 21, LanguageId = 1 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 22, LanguageId = 3 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 23, LanguageId = 3 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 23, LanguageId = 2 });
+            modelBuilder.Entity<PersonLanguage>().HasData(new PersonLanguage { PersonId = 24, LanguageId = 3 });
+
         }
 
     }

@@ -18,8 +18,25 @@ namespace LexiconMVCData.Data
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
 
+        public DbSet<Language> Languages { get; set; }
+
+        public DbSet<PersonLanguage> PersonLanguages { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<PersonLanguage>().HasKey(p => new { p.PersonId, p.LanguageId });
+
+            modelBuilder.Entity<PersonLanguage>()
+                .HasOne<Person>(pl => pl.Person)
+                .WithMany(p => p.PersonLanguages)
+                .HasForeignKey(pl => pl.PersonId);
+
+
+            modelBuilder.Entity<PersonLanguage>()
+                .HasOne<Language>(pl => pl.Language)
+                .WithMany(l => l.PersonLanguages)
+                .HasForeignKey(pl => pl.LanguageId);
+
             modelBuilder.Seed();
         }
     }

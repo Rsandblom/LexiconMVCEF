@@ -12,6 +12,7 @@ namespace LexiconMVCData.Models
         public string PhoneNumber { get; set; }
         public City City { get; set; }
         public int CityId { get; set; }
+        public List<PersonLanguage> PersonLanguages { get; set; }
 
         public Person()
         {

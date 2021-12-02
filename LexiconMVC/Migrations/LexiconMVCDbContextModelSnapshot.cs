@@ -126,6 +126,38 @@ namespace LexiconMVCData.Migrations
                         });
                 });
 
+            modelBuilder.Entity("LexiconMVCData.Models.Language", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Languages");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Svenska"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Norska"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Danska"
+                        });
+                });
+
             modelBuilder.Entity("LexiconMVCData.Models.Person", b =>
                 {
                     b.Property<int>("Id")
@@ -319,6 +351,183 @@ namespace LexiconMVCData.Migrations
                         });
                 });
 
+            modelBuilder.Entity("LexiconMVCData.Models.PersonLanguage", b =>
+                {
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PersonId", "LanguageId");
+
+                    b.HasIndex("LanguageId");
+
+                    b.ToTable("PersonLanguages");
+
+                    b.HasData(
+                        new
+                        {
+                            PersonId = 1,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 1,
+                            LanguageId = 2
+                        },
+                        new
+                        {
+                            PersonId = 2,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 3,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 3,
+                            LanguageId = 3
+                        },
+                        new
+                        {
+                            PersonId = 4,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 5,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 6,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 7,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 7,
+                            LanguageId = 2
+                        },
+                        new
+                        {
+                            PersonId = 8,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 9,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 10,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 10,
+                            LanguageId = 3
+                        },
+                        new
+                        {
+                            PersonId = 11,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 12,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 13,
+                            LanguageId = 2
+                        },
+                        new
+                        {
+                            PersonId = 14,
+                            LanguageId = 2
+                        },
+                        new
+                        {
+                            PersonId = 14,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 15,
+                            LanguageId = 2
+                        },
+                        new
+                        {
+                            PersonId = 16,
+                            LanguageId = 2
+                        },
+                        new
+                        {
+                            PersonId = 17,
+                            LanguageId = 2
+                        },
+                        new
+                        {
+                            PersonId = 17,
+                            LanguageId = 3
+                        },
+                        new
+                        {
+                            PersonId = 18,
+                            LanguageId = 2
+                        },
+                        new
+                        {
+                            PersonId = 19,
+                            LanguageId = 3
+                        },
+                        new
+                        {
+                            PersonId = 20,
+                            LanguageId = 3
+                        },
+                        new
+                        {
+                            PersonId = 21,
+                            LanguageId = 3
+                        },
+                        new
+                        {
+                            PersonId = 21,
+                            LanguageId = 1
+                        },
+                        new
+                        {
+                            PersonId = 22,
+                            LanguageId = 3
+                        },
+                        new
+                        {
+                            PersonId = 23,
+                            LanguageId = 3
+                        },
+                        new
+                        {
+                            PersonId = 23,
+                            LanguageId = 2
+                        },
+                        new
+                        {
+                            PersonId = 24,
+                            LanguageId = 3
+                        });
+                });
+
             modelBuilder.Entity("LexiconMVCData.Models.City", b =>
                 {
                     b.HasOne("LexiconMVCData.Models.Country", "Country")
@@ -333,6 +542,21 @@ namespace LexiconMVCData.Migrations
                     b.HasOne("LexiconMVCData.Models.City", "City")
                         .WithMany("People")
                         .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LexiconMVCData.Models.PersonLanguage", b =>
+                {
+                    b.HasOne("LexiconMVCData.Models.Language", "Language")
+                        .WithMany("PersonLanguages")
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LexiconMVCData.Models.Person", "Person")
+                        .WithMany("PersonLanguages")
+                        .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
