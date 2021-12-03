@@ -20,8 +20,7 @@
         </div>
         <div class="form-group">
             <label asp-for="LanguageName"></label>
-            <input asp-for="LanguageName" class="form-control" />
-            <span asp-validation-for="LanguageName"></span>
+            <select asp-for="LanguageIdString" asp-items="Model.Languages"></select>
         </div>
         <div>
             <input type="submit" value="Add Language to Person" class="btn btn-primary mb-2 mr-sm-2" />
